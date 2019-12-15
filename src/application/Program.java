@@ -14,16 +14,28 @@ public class Program {
 	public static void main(String[] args) {
 		Locale.setDefault(Locale.US);
 		List<Product> list = new ArrayList<>();
-		Scanner sc=new Scanner(System.in);
-		
-		list.add(new Product("Car",50000.00));
-		list.add(new Product("Bike",5000.00));
-		list.add(new Product("Tablet",2000.00));
-		list.add(new Product("Fan",300.00));
-		list.add(new Product("Keybord",40.00));
-		
+		Scanner sc = new Scanner(System.in);
+
+		list.add(new Product("Car", 50000.00));
+		list.add(new Product("Bike", 5000.00));
+		list.add(new Product("Tablet", 2000.00));
+		list.add(new Product("Fan", 300.00));
+		list.add(new Product("Keybord", 40.00));
+
 		List<String> namesUper = list.stream().map(new UpperCaseName()).collect(Collectors.toList());
 		namesUper.forEach(System.out::println);
+		
+		System.out.println();
+		System.out.println("Method reference static");
+		List<String> namesUpper = list.stream().map(Product::staticUpperCase).collect(Collectors.toList());
+		namesUpper.forEach(System.out::println);
+		
+		System.out.println();
+		System.out.println("Method reference nonstatic");
+		List<String> namesUpper2 = list.stream().map(Product::nosStaticUpperCase).collect(Collectors.toList());
+		namesUpper2.forEach(System.out::println);
+		
+		
 		
 		sc.close();
 
