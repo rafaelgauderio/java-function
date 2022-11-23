@@ -38,6 +38,11 @@ public class ProgramPrice {
 		List<String> pricePlus20Percent = list.stream().map(new PriceUpdate()).collect(Collectors.toList());		
 		pricePlus20Percent.forEach(System.out::println);
 		
+		System.out.println("\nReferece method com método estático");
+		List<String> pricePlus20Percent2 = list.stream().map(Product::staticIncrease15Percent).collect(Collectors.toList());
+		pricePlus20Percent2.forEach(System.out::println);
+		
+		
 		sc.close();
 
 	}

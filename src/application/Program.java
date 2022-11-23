@@ -33,7 +33,7 @@ public class Program {
 
 		System.out.println();
 		System.out.println("Method reference non static");
-		List<String> namesUpper2 = list.stream().map(Product::nosStaticUpperCase).collect(Collectors.toList());
+		List<String> namesUpper2 = list.stream().map(Product::nonStaticUpperCase).collect(Collectors.toList());
 		namesUpper2.forEach(System.out::println);
 
 		System.out.println();

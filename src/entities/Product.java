@@ -29,8 +29,12 @@ public class Product {
 	public static String staticUpperCase (Product pro) {
 		return pro.getName().toUpperCase();
 	}
-	public String nosStaticUpperCase() {
+	public String nonStaticUpperCase() {
 		return name.toUpperCase();
+	}
+	
+	public static String staticIncrease15Percent(Product pro) {
+		return String.format("r$ %.2f", pro.getPrice()*1.15);
 	}
 
 	@Override
