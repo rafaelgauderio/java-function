@@ -42,6 +42,10 @@ public class ProgramPrice {
 		List<String> pricePlus20Percent2 = list.stream().map(Product::staticIncrease15Percent).collect(Collectors.toList());
 		pricePlus20Percent2.forEach(System.out::println);
 		
+		System.out.println("\nReference method com método não estárico");
+		List <String> pricePlus20Percent3 = list.stream().map(Product::nonStaticIncrease15Percent).collect(Collectors.toList());
+		pricePlus20Percent3.forEach(System.out::println);
+		
 		
 		sc.close();
 

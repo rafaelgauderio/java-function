@@ -36,6 +36,10 @@ public class Product {
 	public static String staticIncrease15Percent(Product pro) {
 		return String.format("r$ %.2f", pro.getPrice()*1.15);
 	}
+	
+	public String nonStaticIncrease15Percent() {
+		return String.format("r$ %.2f", this.getPrice()*1.15);
+	}
 
 	@Override
 	public String toString() {
