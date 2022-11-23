@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import Utilities.PriceUpdate;
@@ -45,6 +46,12 @@ public class ProgramPrice {
 		System.out.println("\nReference method com método não estárico");
 		List <String> pricePlus20Percent3 = list.stream().map(Product::nonStaticIncrease15Percent).collect(Collectors.toList());
 		pricePlus20Percent3.forEach(System.out::println);
+		
+		System.out.println("\nExpressão lambda declarada");
+		Function<Product, String> funcaoLambda = prod -> String.format("R$ %.2f", prod.getPrice()*1.15);
+		List<String> pricePlus20Percent4 = list.stream().map(funcaoLambda).collect(Collectors.toList()); 
+		pricePlus20Percent4.forEach(System.out::println);
+		
 		
 		
 		sc.close();
