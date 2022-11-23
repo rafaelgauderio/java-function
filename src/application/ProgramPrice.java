@@ -53,6 +53,9 @@ public class ProgramPrice {
 		pricePlus20Percent4.forEach(System.out::println);
 		
 		
+		System.out.println("\nExpressão lambda inline");
+		List<String> pricePlus20Percent5 = list.stream().map(prod -> String.format("R$ %.2f", prod.getPrice()*1.15)).collect(Collectors.toList()); 
+		pricePlus20Percent5.forEach(System.out::println);
 		
 		sc.close();
 
